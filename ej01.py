@@ -6,14 +6,19 @@ pilotos = int(input("Cuantos pilotos desea registrar?: "))
 cantidad = pilotos
 for b in range(pilotos):
     nombre = ""  
-    
-    while len(nombre) < 6:
-        nombre = input(f"Nombre del piloto {b+1}: ").title().replace(" ", "") #El ".title" convierte la primer letra despues de un espacio en MAYUSCULA y todo lo demas a minuscula
+
+    while len(nombre) < 6 or not nombre.isalpha(): #El ".isalpha" sirve para saber si un texto esta compuesto solamente por letras del abecedario
+        nombre = input(f"Nombre del piloto {b+1}: ").title().replace(" ", "")#El ".title" convierte la primer letra despues de un espacio en MAYUSCULA y todo lo demas a minuscula
                                                                               #El ".replace(" ", "")" sirve para reemplazar los espacios
         
+        
         if len(nombre) < 6:
-            print("¡Error: El nombre formateado debe tener al menos 6 caracteres! Intenta de nuevo.")
-    print(f"-> Registrado con éxito como: {nombre}")
+            print("¡Error: El nombre debe tener al menos 6 caracteres! Intenta de nuevo.")
+        elif not nombre.isalpha():
+            print("¡Error: El nombre no puede contener números ni símbolos! Intenta de nuevo.")
+            nombre = "" 
+
+    print(f"-> Registrado con éxito como: {nombre}\n")
 
 #for b in range(cantidad):
     #cantidad = 0
