@@ -23,7 +23,7 @@ while opc != 5:
             while reserva <= 0 or reserva > cupos:
                 try:
                     reserva = int(input("Cuantos cupos desea reservar?: "))
-                    if reserva > 0 and reserva <= cupos: #Antes si excedia la cantidad maxima de cupos no realizaba correctamente lo solicitado por el enunciado
+                    if reserva > 0 and reserva <= cupos: #Antes si excedia la cantidad maxima de cupos no realizaba correctamente lo solicitado por el enunciado, el cambio realizado fue "reserva < cupos" por "reserva <= cupos"
                         print(f"Se han reservado {reserva} cupos")
                     else:
                         print("Los cupos solicitados exceden los cupos disponibles!!") #Antes solo mostraba el mensaje "Datos invalidos"
