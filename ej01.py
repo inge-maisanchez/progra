@@ -38,7 +38,7 @@ for i in range(pilotos):
         try:
             nivel = int(input("Ingrese nivel de piloto: "))
             piloto = i+1
-            if nivel >= 40:
+            if nivel > 40: #Hice este cambio "nivel >= 40" por "nivel > 40"
                 print("Se ha registrado un Comandante Galactico!!")
                 comandante += 1
             elif nivel <= 0:
